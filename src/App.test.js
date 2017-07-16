@@ -1,22 +1,19 @@
-/* global it, expect */
+/* global it, expect, jest */
+
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import { shallow } from 'enzyme';
+import { App } from './App';
+import { initialState } from './reducers/';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
+it('App renders without crashing', () => {
+  const mockFunction = jest.fn();
+
+  const component = shallow(
+    <App
+      state={initialState}
+      submitTodo={mockFunction}
+    />,
+  );
+
+  expect(component.exists()).toEqual(true);
 });
-
-
-/*describe('TodoList App', () => {
-  it('Should load with the right title', () => {
-    expect(actualTitle).to.eql('Todo List');
-  });
-
-  it('Should allow me to create a Todo', () => {
-    const todoText = 'Get better at testing';
-
-    expect(actual).to.equal(todoText);
-  });
-});*/
