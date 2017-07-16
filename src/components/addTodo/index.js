@@ -26,6 +26,7 @@ const AddTodo = ({ submitTodo, undeleteTodo }) => {
         </button>
 
         <button
+          type="button"
           className="todo-undelete"
           onClick={undeleteTodo}
         >
