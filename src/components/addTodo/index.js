@@ -19,6 +19,7 @@ const AddTodo = ({ submitTodo, undeleteTodo, inputChanged, disableAddTodo, disab
           ref={(element) => {
             input = element;
           }}
+          placeholder="I want to do..."
           onChange={() => inputChanged(input.value)}
         />
 

@@ -10,7 +10,7 @@ const TodoList = ({ todos, deleteTodo }) => {
         className="todo-delete"
         onClick={() => deleteTodo(todo.id)}
       >
-        Delete
+        X
       </button>
 
       <span className="todo-text">
